@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "lama-cleaner"
 version = "0.34.0"
@@ -6,15 +10,16 @@ authors = [
   { name = "PanicByte", email = "cwq1913@gmail.com" }
 ]
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 classifiers = [
   "License :: OSI Approved :: Apache Software License",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
@@ -29,11 +34,11 @@ dependencies = [
   "loguru",
   "pytest",
   "yacs",
-  "markupsafe==2.0.1",
-  "scikit-image==0.19.3",
+  "markupsafe>=2.0.1",
+  "scikit-image>=0.22.0",
   "diffusers[torch]==0.10.2",
   "transformers>=4.25.1",
-  "watchdog==2.2.1",
+  "watchdog>=2.2.1",
   "gradio",
 ]
 
@@ -45,3 +50,6 @@ lama_cleaner = ["app/build/**/*"]
 
 [project.scripts]
 lama-cleaner = "lama_cleaner:entry_point"
+
+[tool.uv]
+package = true

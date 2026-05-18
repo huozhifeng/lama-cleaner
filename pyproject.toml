@@ -1,0 +1,47 @@
+[project]
+name = "lama-cleaner"
+version = "0.34.0"
+description = "Image inpainting tool powered by SOTA AI Model"
+authors = [
+  { name = "PanicByte", email = "cwq1913@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "torch>=1.9.0",
+  "opencv-python",
+  "flask_cors",
+  "flask==1.1.4",
+  "flaskwebgui==0.3.5",
+  "tqdm",
+  "pydantic",
+  "rich",
+  "loguru",
+  "pytest",
+  "yacs",
+  "markupsafe==2.0.1",
+  "scikit-image==0.19.3",
+  "diffusers[torch]==0.10.2",
+  "transformers>=4.25.1",
+  "watchdog==2.2.1",
+  "gradio",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+lama_cleaner = ["app/build/**/*"]
+
+[project.scripts]
+lama-cleaner = "lama_cleaner:entry_point"
